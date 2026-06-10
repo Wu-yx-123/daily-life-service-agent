@@ -1,0 +1,103 @@
+{
+  "name": "intent_golden",
+  "description": "IntentAgent 意图识别和槽位提取黄金评测集",
+  "metrics": ["intent_accuracy", "slot_extraction_accuracy", "schema_valid_rate"],
+  "cases": [
+    {
+      "id": "intent_001",
+      "input": "今晚8点想约一个90分钟肩颈按摩，预算300以内，力度重一点",
+      "expected": {
+        "task_type": "book_appointment",
+        "slots": {
+          "service_type": "肩颈按摩",
+          "duration_minutes": 90,
+          "budget_max": 300,
+          "strength_preference": "heavy"
+        },
+        "missing_slots": [],
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_002",
+      "input": "下周三下午帮我看看有没有精油SPA，不要太贵的",
+      "expected": {
+        "task_type": "book_appointment",
+        "slots": {
+          "service_type": "精油SPA"
+        },
+        "confidence_min": 0.7
+      }
+    },
+    {
+      "id": "intent_003",
+      "input": "技师迟到了20分钟，我要退款",
+      "expected": {
+        "task_type": "refund_request",
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_004",
+      "input": "帮我取消明天的预约",
+      "expected": {
+        "task_type": "cancel_order",
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_005",
+      "input": "过两天想做个全身按摩，时间你帮我看看",
+      "expected": {
+        "task_type": "book_appointment",
+        "slots": {
+          "service_type": "全身按摩"
+        },
+        "confidence_min": 0.7
+      }
+    },
+    {
+      "id": "intent_006",
+      "input": "你们有哪些会员优惠活动",
+      "expected": {
+        "task_type": "service_query",
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_007",
+      "input": "店里营业到几点，地址在哪",
+      "expected": {
+        "task_type": "store_query",
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_008",
+      "input": "脖子最近不舒服，想找个技师放松一下",
+      "expected": {
+        "task_type": "book_appointment",
+        "slots": {
+          "service_type": "肩颈按摩"
+        },
+        "confidence_min": 0.6
+      }
+    },
+    {
+      "id": "intent_009",
+      "input": "想改一下预约时间，上次约的明天改成后天",
+      "expected": {
+        "task_type": "reschedule_order",
+        "confidence_min": 0.8
+      }
+    },
+    {
+      "id": "intent_010",
+      "input": "技师态度很差，手法也不行，我要投诉",
+      "expected": {
+        "task_type": "complaint",
+        "confidence_min": 0.8
+      }
+    }
+  ]
+}

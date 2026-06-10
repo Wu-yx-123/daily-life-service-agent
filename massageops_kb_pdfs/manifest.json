@@ -1,0 +1,52 @@
+[
+  {
+    "file": "01_service_knowledge.pdf",
+    "title": "服务项目知识库",
+    "subtitle": "service_description - 用于 MatchAgent、KnowledgeAgent 与用户咨询推荐"
+  },
+  {
+    "file": "02_store_rules.pdf",
+    "title": "门店规则知识库",
+    "subtitle": "store_rule - 用于预约说明、规则问答与 VerificationGate 辅助提示"
+  },
+  {
+    "file": "03_after_sales_refund_policy.pdf",
+    "title": "售后与退款政策知识库",
+    "subtitle": "after_sales_policy / refund_policy - 用于 CustomerServiceAgent"
+  },
+  {
+    "file": "04_membership_promotions.pdf",
+    "title": "会员与优惠规则知识库",
+    "subtitle": "promotion_rule - 用于 PriceAgent 的解释与客服问答"
+  },
+  {
+    "file": "05_faq.pdf",
+    "title": "用户常见问题 FAQ 知识库",
+    "subtitle": "faq - 用于 KnowledgeAgent 与用户侧问答"
+  },
+  {
+    "file": "06_risk_policy.pdf",
+    "title": "风控规则说明知识库",
+    "subtitle": "risk_policy - 用于 RiskAgent 辅助解释与人工审核参考"
+  },
+  {
+    "file": "07_complaint_handling.pdf",
+    "title": "投诉处理标准知识库",
+    "subtitle": "complaint_policy - 用于 CustomerServiceAgent 与人工审核台"
+  },
+  {
+    "file": "08_ops_playbook.pdf",
+    "title": "商家运营分析知识库",
+    "subtitle": "ops_playbook - 用于 OpsAgent 生成经营分析报告"
+  },
+  {
+    "file": "09_response_templates.pdf",
+    "title": "Agent 回复模板知识库",
+    "subtitle": "response_template - 用于对话回复、缺槽追问与客服安抚"
+  },
+  {
+    "file": "10_kb_import_index.pdf",
+    "title": "知识库导入索引与元数据说明",
+    "subtitle": "kb_index - 用于开发者导入 ChromaDB / RAG 检索"
+  }
+]

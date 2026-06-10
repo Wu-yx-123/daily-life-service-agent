@@ -1,0 +1,63 @@
+# 作用：本地编排 PostgreSQL、Redis、FastAPI 后端和 React 前端。
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: massageops
+      POSTGRES_PASSWORD: massageops
+      POSTGRES_DB: massageops
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U massageops"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      MASSAGEOPS_DATABASE_URL: postgresql+asyncpg://massageops:massageops@postgres:5432/massageops
+      MASSAGEOPS_REDIS_URL: redis://redis:6379/0
+      MASSAGEOPS_LLM_PROVIDER: ${MASSAGEOPS_LLM_PROVIDER:-deepseek}
+      MASSAGEOPS_LLM_BASE_URL: ${MASSAGEOPS_LLM_BASE_URL:-}
+      MASSAGEOPS_LLM_API_KEY: ${MASSAGEOPS_LLM_API_KEY:-}
+      MASSAGEOPS_LLM_CHAT_MODEL: ${MASSAGEOPS_LLM_CHAT_MODEL:-}
+      MASSAGEOPS_LLM_EMBED_MODEL: ${MASSAGEOPS_LLM_EMBED_MODEL:-}
+      MASSAGEOPS_MCP_RAG_SERVER_URL: ${MASSAGEOPS_MCP_RAG_SERVER_URL:-}
+      MASSAGEOPS_MCP_RAG_TIMEOUT: ${MASSAGEOPS_MCP_RAG_TIMEOUT:-30.0}
+      MASSAGEOPS_MCP_RAG_COLLECTION: ${MASSAGEOPS_MCP_RAG_COLLECTION:-knowledge}
+      MASSAGEOPS_CORS_ORIGINS: '["http://localhost:5173","http://127.0.0.1:5173"]'
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      VITE_API_TARGET: http://backend:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

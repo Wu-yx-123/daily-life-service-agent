@@ -1,0 +1,45 @@
+{
+  "name": "after_sales_golden",
+  "description": "售后处理黄金评测集",
+  "metrics": ["ticket_type_accuracy", "priority_accuracy", "policy_grounding_accuracy"],
+  "cases": [
+    {
+      "id": "as_001",
+      "input": "技师迟到了30分钟，我要退款",
+      "expected": {
+        "ticket_type": "refund_request",
+        "priority": "high",
+        "summary_contains": ["退款"],
+        "notes": "退款请求应为 high 优先级"
+      }
+    },
+    {
+      "id": "as_002",
+      "input": "技师态度很不好，手法也不行，我要投诉",
+      "expected": {
+        "ticket_type": "complaint",
+        "priority": "urgent",
+        "summary_contains": ["投诉"],
+        "notes": "投诉应为 urgent 优先级"
+      }
+    },
+    {
+      "id": "as_003",
+      "input": "临时有事，想把今晚的预约改到明天下午",
+      "expected": {
+        "ticket_type": "reschedule_order",
+        "priority": "normal",
+        "notes": "改期应为 normal 优先级"
+      }
+    },
+    {
+      "id": "as_004",
+      "input": "不去了，取消预约",
+      "expected": {
+        "ticket_type": "cancel_order",
+        "priority": "normal",
+        "notes": "取消应为 normal 优先级"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# MassageOps-Agent 本地配置模板
+
+MASSAGEOPS_DATABASE_URL: "sqlite+aiosqlite:///./dev.db"
+MASSAGEOPS_REDIS_URL: "memory://"
+VITE_API_BASE: ""

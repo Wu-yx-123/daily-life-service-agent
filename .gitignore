@@ -1,0 +1,20 @@
+# 作用：忽略本地虚拟环境、依赖目录、缓存、数据库和构建产物。
+
+# Python
+backend/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/dev.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+
+# OS / editor
+.DS_Store
+.vscode/
+

@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-05-31T07:18:57.347180+00:00",
+  "results": {
+    "after_sales_golden": {
+      "name": "after_sales_golden",
+      "timestamp": "2026-05-31T07:17:27.914555+00:00",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "metrics": {
+        "ticket_type_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "policy_grounding_accuracy": 1.0
+      },
+      "details": [
+        {
+          "case_id": "as_001",
+          "passed": true
+        },
+        {
+          "case_id": "as_002",
+          "passed": true
+        },
+        {
+          "case_id": "as_003",
+          "passed": true
+        },
+        {
+          "case_id": "as_004",
+          "passed": true
+        }
+      ]
+    },
+    "booking_workflow_golden": {
+      "name": "booking_workflow_golden",
+      "timestamp": "2026-05-31T07:17:44.566821+00:00",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "metrics": {
+        "workflow_completion_rate": 1.0,
+        "approval_trigger_accuracy": 1.0,
+        "conflict_detection_rate": 1.0
+      },
+      "details": [
+        {
+          "case_id": "wf_001",
+          "passed": true
+        },
+        {
+          "case_id": "wf_002",
+          "passed": true
+        },
+        {
+          "case_id": "wf_003",
+          "passed": true
+        },
+        {
+          "case_id": "wf_004",
+          "passed": true
+        },
+        {
+          "case_id": "wf_005",
+          "passed": true
+        }
+      ]
+    },
+    "intent_golden": {
+      "name": "intent_golden",
+      "timestamp": "2026-05-31T07:18:18.492526+00:00",
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "metrics": {
+        "intent_accuracy": 1.0,
+        "schema_valid_rate": 1.0,
+        "slot_extraction_accuracy": 1.0
+      },
+      "details": [
+        {
+          "case_id": "intent_001",
+          "passed": true
+        },
+        {
+          "case_id": "intent_002",
+          "passed": true
+        },
+        {
+          "case_id": "intent_003",
+          "passed": true
+        },
+        {
+          "case_id": "intent_004",
+          "passed": true
+        },
+        {
+          "case_id": "intent_005",
+          "passed": true
+        },
+        {
+          "case_id": "intent_006",
+          "passed": true
+        },
+        {
+          "case_id": "intent_007",
+          "passed": true
+        },
+        {
+          "case_id": "intent_008",
+          "passed": true
+        },
+        {
+          "case_id": "intent_009",
+          "passed": true
+        },
+        {
+          "case_id": "intent_010",
+          "passed": true
+        }
+      ]
+    },
+    "rag_retrieval_golden": {
+      "name": "rag_retrieval_golden",
+      "timestamp": "2026-05-31T07:18:51.803122+00:00",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "metrics": {
+        "rag_recall_at_k": 1.0,
+        "evidence_source_match": 0.0,
+        "policy_grounding_accuracy": 1.0
+      },
+      "details": [
+        {
+          "case_id": "rag_001",
+          "passed": true
+        },
+        {
+          "case_id": "rag_002",
+          "passed": true
+        },
+        {
+          "case_id": "rag_003",
+          "passed": true
+        },
+        {
+          "case_id": "rag_004",
+          "passed": true
+        },
+        {
+          "case_id": "rag_005",
+          "passed": true
+        }
+      ]
+    }
+  }
+}

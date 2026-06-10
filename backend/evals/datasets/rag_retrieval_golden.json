@@ -1,0 +1,47 @@
+{
+  "name": "rag_retrieval_golden",
+  "description": "RAG 检索质量黄金评测集——验证 KnowledgeAgent 能召回正确的政策文档",
+  "metrics": ["rag_recall_at_k", "policy_grounding_accuracy", "evidence_source_match"],
+  "cases": [
+    {
+      "id": "rag_001",
+      "query": "退款政策",
+      "expected_doc_type": "refund_policy",
+      "expected_title_contains": "退款",
+      "min_evidence_count": 1,
+      "notes": "退款查询应召回退款政策文档"
+    },
+    {
+      "id": "rag_002",
+      "query": "投诉怎么处理",
+      "expected_doc_type": "complaint_policy",
+      "expected_title_contains": "投诉",
+      "min_evidence_count": 1,
+      "notes": "投诉查询应召回投诉处理文档"
+    },
+    {
+      "id": "rag_003",
+      "query": "会员有什么优惠",
+      "expected_doc_type": "promotion_rule",
+      "expected_title_contains": "会员",
+      "min_evidence_count": 1,
+      "notes": "会员查询应召回会员优惠文档"
+    },
+    {
+      "id": "rag_004",
+      "query": "肩颈按摩",
+      "expected_doc_type": "service_description",
+      "expected_title_contains": "服务",
+      "min_evidence_count": 1,
+      "notes": "服务查询应召回服务知识库"
+    },
+    {
+      "id": "rag_005",
+      "query": "预约规则",
+      "expected_doc_type": "store_rule",
+      "expected_title_contains": "规则",
+      "min_evidence_count": 1,
+      "notes": "规则查询应召回门店规则文档"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "booking_workflow_golden",
+  "description": "预约完整工作流黄金评测集",
+  "metrics": ["workflow_completion_rate", "approval_trigger_accuracy", "conflict_detection_rate"],
+  "cases": [
+    {
+      "id": "wf_001",
+      "input": "今天20点想约一个90分钟肩颈按摩，预算300以内，力度重一点。",
+      "expected": {
+        "response_type": "booking_options",
+        "order_created": true,
+        "notes": "正常预约流程应返回候选方案"
+      }
+    },
+    {
+      "id": "wf_002",
+      "input": "我想做按摩",
+      "expected": {
+        "response_type": "followup",
+        "has_missing_slots": true,
+        "notes": "信息不足时应追问"
+      }
+    },
+    {
+      "id": "wf_003",
+      "input": "我要退款，技师服务太差了",
+      "expected": {
+        "response_type": "service_ticket",
+        "ticket_created": true,
+        "notes": "退款请求应创建售后工单"
+      }
+    },
+    {
+      "id": "wf_004",
+      "input": "帮我取消明天的预约",
+      "expected": {
+        "response_type": "service_ticket",
+        "ticket_created": true,
+        "notes": "取消请求应创建售后工单"
+      }
+    },
+    {
+      "id": "wf_005",
+      "input": "有哪些服务项目",
+      "expected": {
+        "response_type": "followup",
+        "message_contains": ["肩颈"],
+        "notes": "服务查询应有服务列表回复"
+      }
+    }
+  ]
+}
