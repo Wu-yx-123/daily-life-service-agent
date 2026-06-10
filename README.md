@@ -126,3 +126,5 @@ docker-compose.yml   # 4 服务编排
 | ReviewAgent | LLM 语义理解 → 关键词回退 |
 | KnowledgeAgent | MCP RAG Server → SQL 回退 |
 | Match/Schedule/Price/Order/Risk/Planner/Ops | 确定性规则（正确选择） |
+## 学习路线
+123
